@@ -7,19 +7,34 @@
 //
 
 import UIKit
+import Parse
+import ParseTwitterUtils
 
-class ViewController: UIViewController {
+class ViewController: UIViewController
+{
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func twitterButtonPressed(sender: UIButton)
+    {
+        PFTwitterUtils.initializeWithConsumerKey("pUp0j6mcIQBaBplAspoCo6pbA", consumerSecret: "ec3ZL6QL23wtME80SlU8TlHURNBl10aRQNgJv4zyTDsgNT4yno")
+        
+        PFTwitterUtils.logInWithBlock { (user: PFUser?, error: NSError?) -> Void in
+            if user == nil
+            {
+                print("We got a problem")
+            }
+            else
+            {
+                self.performSegueWithIdentifier("segueSuccess", sender: nil)
+            }
+        }
     }
-
 
 }
 

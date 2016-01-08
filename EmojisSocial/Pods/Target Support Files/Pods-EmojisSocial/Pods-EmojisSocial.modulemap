@@ -1,0 +1,6 @@
+framework module Pods_EmojisSocial {
+  umbrella header "Pods-EmojisSocial-umbrella.h"
+
+  export *
+  module * { export * }
+}
