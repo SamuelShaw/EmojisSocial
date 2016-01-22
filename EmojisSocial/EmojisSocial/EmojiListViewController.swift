@@ -53,8 +53,24 @@ class EmojiListViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("emojiCell") as! EmojiPostTableViewCell
         let emojiPost = self.emojiPosts[indexPath.row]
+        let user = emojiPost["user"] as! PFUser
+        do {
+            try user.fetchIfNeeded()
+        } catch {
+            print("There was an error")
+        }
         cell.emojiLabel!.text = emojiPost["emoji"] as? String
         cell.messageLabel!.text = emojiPost["message"] as? String
+        cell.usernameLabel!.text = user["name"] as? String
+        
+        let url = user["image"] as! String
+        let imageData = NSData(contentsOfURL: NSURL(string: url)!)
+        
+        if imageData == nil {
+            cell.userImageView.image = UIImage()
+        } else {
+            cell.userImageView.image = UIImage(data: imageData!)
+        }
         return cell
     }
 

@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="853.5" y="260.5"/>
         </scene>
-        <!--Emoji List View Controller-->
+        <!--Emojis Social-->
         <scene sceneID="Gau-gF-9Si">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="68I-Pj-hG3" customClass="EmojiListViewController" customModule="EmojisSocial" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,14 +74,14 @@
                                                         <constraint firstAttribute="width" constant="80" id="gAL-DG-3PM"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YIU-h7-sKo">
                                                     <rect key="frame" x="113" y="5" width="244" height="70"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I1E-jH-e9y">
@@ -96,7 +96,7 @@
                                                     <rect key="frame" x="43" y="85" width="314" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -143,7 +143,7 @@
                             <constraint firstItem="fUA-bX-V5f" firstAttribute="top" secondItem="mzC-Qc-Ot5" secondAttribute="bottom" id="JuW-im-RGW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zgh-oW-Mxu">
+                    <navigationItem key="navigationItem" title="Emojis Social" id="zgh-oW-Mxu">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="wCX-Ih-j3m">
                             <connections>
                                 <segue destination="o59-VV-8WI" kind="presentation" id="CUB-el-1Ja"/>
@@ -171,11 +171,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RTq-3H-kJ5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Emoji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIw-UL-B9d">
+                                <rect key="frame" x="10" y="54" width="120" height="60"/>
                                 <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I1n-ju-kcJ">
+                                <rect key="frame" x="139" y="59" width="50" height="50"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="5cn-1X-prz"/>
+                                    <constraint firstAttribute="height" constant="50" id="Aee-LP-vA9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's on your mind?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uRc-Ca-CPR">
+                                <rect key="frame" x="10" y="145" width="355" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your emoji field is empty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiT-x6-dNc">
+                                <rect key="frame" x="10" y="183" width="355" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.86577647924423218" green="0.25694498419761658" blue="0.18989759683609009" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RTq-3H-kJ5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="Eqd-iU-NoA"/>
+                                </constraints>
                                 <items>
-                                    <navigationItem title="Title" id="7j5-z4-hKi">
+                                    <navigationItem id="7j5-z4-hKi">
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="OH3-Bv-age">
                                             <connections>
                                                 <action selector="cancelButtonPressed:" destination="o59-VV-8WI" id="Clo-rg-Owx"/>
@@ -189,43 +222,12 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emoji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIw-UL-B9d">
-                                <rect key="frame" x="10" y="54" width="120" height="60"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I1n-ju-kcJ">
-                                <rect key="frame" x="139" y="59" width="50" height="50"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="5cn-1X-prz"/>
-                                    <constraint firstAttribute="height" constant="50" id="Aee-LP-vA9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's on your mind?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uRc-Ca-CPR">
-                                <rect key="frame" x="10" y="145" width="355" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your emoji field is empty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiT-x6-dNc">
-                                <rect key="frame" x="10" y="183" width="355" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.86577647924423218" green="0.25694498419761658" blue="0.18989759683609009" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="uRc-Ca-CPR" secondAttribute="trailing" constant="10" id="2UG-Zl-q2E"/>
                             <constraint firstItem="fiT-x6-dNc" firstAttribute="top" secondItem="uRc-Ca-CPR" secondAttribute="bottom" constant="8" id="42A-rc-QxU"/>
-                            <constraint firstItem="0IX-Mv-0zQ" firstAttribute="top" secondItem="RTq-3H-kJ5" secondAttribute="bottom" constant="623" id="Njf-oO-MRv"/>
                             <constraint firstAttribute="trailing" secondItem="RTq-3H-kJ5" secondAttribute="trailing" id="OAd-1s-scq"/>
                             <constraint firstItem="pIw-UL-B9d" firstAttribute="top" secondItem="RTq-3H-kJ5" secondAttribute="bottom" constant="10" id="cem-u6-Oag"/>
                             <constraint firstItem="RTq-3H-kJ5" firstAttribute="leading" secondItem="yfV-hp-OO8" secondAttribute="leading" id="iG9-km-DvR"/>
@@ -248,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eqi-oQ-9pg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2244.5" y="260.5"/>
+            <point key="canvasLocation" x="2165.5" y="260.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dBA-wx-7Jg">

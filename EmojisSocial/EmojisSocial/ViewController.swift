@@ -15,7 +15,8 @@ class ViewController: UIViewController
     
     
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -31,6 +32,25 @@ class ViewController: UIViewController
             }
             else
             {
+                let url = NSURL(string: "https://api.twitter.com/1.1/account/verify_credentials.json")
+                let request = NSMutableURLRequest(URL: url!)
+                PFTwitterUtils.twitter()?.signRequest(request)
+                
+                NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data:NSData?, response:NSURLResponse?, error:NSError?) -> Void in
+                    do {
+                    let responseDict = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves)
+                    let imageUrl = responseDict["profile_image_url_https"] as! String
+                    let name = responseDict["name"] as! String
+//                        print(imageUrl)
+//                        print(name)
+                        user!.setObject(imageUrl, forKey: "image")
+                        user!.setObject(name, forKey: "name")
+                        
+                        user?.saveInBackground()
+                        
+                    } catch {}
+                }).resume()
+                
                 self.performSegueWithIdentifier("segueSuccess", sender: nil)
             }
         }
